@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Frontend</title>
+
+<script>
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('color-scheme') === 'dark') {
+    document.documentElement.classList.add('dark-mode')
+  }
+</script>
+
+<base href="">
+
+<!-- DNS -->
+<!--<link rel="preconnect" href="http://assets.localhost/" crossorigin="crossorigin">-->
+<!--<link rel="dns-prefetch" href="http://assets.localhost/">-->
+
+<!-- Критические стили -->
+
+<style>:root {
+  --color-text:34,34,34;
+  --color-bg:255,255,255;
+  --color-accent:238,27,36;
+  --color-shadow:162,162,162;
+  --color-submenu:242,242,242;
+  --color-submenu-hover:220,220,220;
+  --color-overlay:199,199,199;
+  --color-blue:242,249,255;
+  --swiper-theme-color:rgb(var(--color-accent))!important;
+}
+
+.dark-mode {
+  --color-text:255,255,255;
+  --color-bg:34,34,34;
+  --color-accent:240,51,59;
+  --color-shadow:21,21,21;
+  --color-submenu:26,26,26;
+  --color-submenu-hover:21,21,21;
+  --color-overlay:51,51,51;
+  --color-blue:37,37,37;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+[hidden], template {
+  display: none;
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+body, html {
+  height: 100vh;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: Roboto, -apple-system, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  min-width: 320px;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease;
+}
+
+embed, iframe, img, object {
+  background-color: rgb(var(--color-text), 0.1);
+  height: auto;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 72px 0 36px;
+}
+
+h1 + h1, h2 + h1, h3 + h1, h4 + h1, h5 + h1, h6 + h1 {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 33px;
+  font-weight: 500;
+  margin: 49.5px 0 24.75px;
+}
+
+h1 + h2, h2 + h2, h3 + h2, h4 + h2, h5 + h2, h6 + h2 {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 36px 0 18px;
+}
+
+h1 + h3, h2 + h3, h3 + h3, h4 + h3, h5 + h3, h6 + h3 {
+  margin-top: 0;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 27px 0 13.5px;
+}
+
+h1 + h4, h2 + h4, h3 + h4, h4 + h4, h5 + h4, h6 + h4 {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+}
+
+h1 + h5, h2 + h5, h3 + h5, h4 + h5, h5 + h5, h6 + h5 {
+  margin-top: 0;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 21px 0 10.5px;
+}
+
+h1 + h6, h2 + h6, h3 + h6, h4 + h6, h5 + h6, h6 + h6 {
+  margin-top: 0;
+}
+
+b, strong {
+  font-weight: 500;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+kbd {
+  background-color: #eee;
+  border: 1px solid #b4b4b4;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 2px 0 0 hsla(0, 0%, 100%, 0.7);
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 500;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.overlay {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(var(--color-overlay), 0.8);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.layout__main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1700px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+.logo {
+  align-items: center;
+  color: rgba(var(--color-text), 0.7);
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  display: flex;
+  font-size: 10px;
+  max-width: 220px;
+  text-decoration: none;
+}
+
+.logo__img {
+  flex-shrink: 0;
+  height: 50px;
+  width: 42px;
+}
+
+.logo__desc {
+  margin: 0;
+}
+
+.logo__desc b {
+  color: rgb(var(--color-text));
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 12px;
+  }
+}
+.navigation .feature-menu {
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+}
+
+.navigation .feature-menu__item--search {
+  display: none;
+}
+
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item {
+  color: rgb(var(--color-text));
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navigation__item--back {
+  text-transform: none;
+}
+
+.navigation__link {
+  color: rgb(var(--color-text));
+  display: block;
+  text-decoration: none;
+}
+
+.navigation__item--active > .navigation__link {
+  color: rgb(var(--color-accent), 1);
+}
+
+.navigation__item--back .navigation__link {
+  color: rgb(var(--color-text), 0.5);
+}
+
+.navigation__sub-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  font-family: inherit;
+  height: 18px;
+  margin-right: 20px;
+  position: relative;
+  vertical-align: middle;
+  width: 18px;
+}
+
+.navigation__sub-toggle:after, .navigation__sub-toggle:before {
+  background-color: rgba(var(--color-text), 0.5);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+}
+
+.navigation__sub-toggle:after {
+  transform: rotate(90deg);
+}
+
+.navigation__sub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1179px) {
+  .navigation__wrap {
+    background-color: rgb(var(--color-bg));
+    bottom: 0;
+    box-shadow: 1px 0 20px rgb(var(--color-shadow));
+    height: 100%;
+    left: 0;
+    max-width: 280px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(-110%);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+    z-index: 200;
+  }
+  .navigation__wrap--active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  .navigation__header {
+    align-items: center;
+    background-color: rgba(var(--color-text), 0.05);
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 90px;
+    padding: 20px;
+  }
+  .navigation__logo .logo__desc {
+    display: none;
+  }
+  .navigation__logo {
+    flex-shrink: 0;
+  }
+  .navigation__content {
+    height: calc(100% - 90px);
+    overflow-y: auto;
+    padding: 10px 0;
+    position: relative;
+  }
+  .navigation__item {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navigation__link {
+    flex-grow: 1;
+    padding: 10px 20px;
+  }
+  .navigation__item--back .navigation__link {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .navigation__sub-toggle {
+    display: block;
+  }
+  .navigation__sub-list {
+    background-color: rgb(var(--color-bg));
+    bottom: 0;
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-110%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+  }
+  .navigation__sub-list--open {
+    height: 100%;
+    overflow: unset;
+    transform: translateX(0);
+  }
+  .navigation__search {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(var(--color-text), 0.3);
+    color: rgba(var(--color-text), 0.5);
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    margin: 10px 20px;
+    padding: 20px 20px 20px 40px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    width: calc(100% - 40px);
+  }
+  .navigation__search-icon {
+    fill: rgba(var(--color-text), 0.5);
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .navigation__search-link {
+    color: rgba(var(--color-text), 0.8);
+    display: block;
+    line-height: 1.2;
+    overflow: hidden;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .navigation__search-link:before {
+    background-color: rgba(var(--color-text), 0.2);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+  }
+  .navigation__search-link:last-child:before {
+    display: none;
+  }
+  .no-js .navigation__header {
+    justify-content: flex-start;
+  }
+  .no-js .navigation__feature {
+    margin-left: auto;
+  }
+  .no-js .navigation:focus-within .menu-toggle {
+    pointer-events: none;
+  }
+  .no-js .navigation__sub-list {
+    height: 100%;
+    min-height: 500px;
+    overflow-y: auto;
+  }
+  .no-js .navigation__toggle + .navigation__wrap {
+    visibility: visible;
+  }
+  .no-js .navigation__toggle:focus + .navigation__wrap, .no-js .navigation__wrap:focus-within {
+    transform: translateX(0);
+  }
+  .no-js .navigation__sub-list:focus-within, .no-js .navigation__sub-toggle:focus + .navigation__sub-list {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 1179px) and (hover: none) {
+  .no-js .navigation__sub-list:hover, .no-js .navigation__toggle:hover + .navigation__sub-list {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 1179px) {
+  .no-js .navigation__item--back .navigation__link {
+    pointer-events: none;
+  }
+  .no-js .navigation__search {
+    display: none;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .navigation__header, .navigation__item--back, .navigation__search, .navigation__toggle {
+    display: none;
+  }
+  .navigation__list {
+    -moz-column-gap: 50px;
+    column-gap: 50px;
+    display: flex;
+  }
+  .navigation__item {
+    position: relative;
+  }
+  .navigation__link {
+    padding: 12px 0;
+    transition: color 0.3s ease;
+  }
+  .navigation__item--active > .navigation__link, .navigation__link:focus, .navigation__link:hover {
+    color: rgb(var(--color-accent));
+  }
+  .navigation__sub-list {
+    background-color: rgb(var(--color-submenu));
+    border-radius: 5px;
+    box-shadow: 1px 0 20px rgb(var(--color-shadow));
+    min-width: 205px;
+    opacity: 0;
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+  }
+  .navigation__item:focus-within > .navigation__sub-list, .navigation__item:hover > .navigation__sub-list, .navigation__link:focus ~ .navigation__sub-list {
+    opacity: 1;
+    visibility: visible;
+  }
+  .navigation__sub-list .navigation__item {
+    font-weight: 400;
+    text-transform: none;
+  }
+  .navigation__sub-list .navigation__link {
+    padding: 8px 20px;
+    transition: background-color 0.3s ease;
+  }
+  .navigation__sub-list .navigation__link:focus, .navigation__sub-list .navigation__link:hover {
+    background-color: rgb(var(--color-submenu-hover));
+  }
+  .navigation__sub-list .navigation__sub-list {
+    right: 100%;
+    top: -9px;
+  }
+}
+.feature-menu {
+  align-items: center;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-menu__item {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 0;
+  min-height: 25px;
+  vertical-align: middle;
+}
+
+.feature-menu__item--lang {
+  color: rgb(var(--color-accent));
+  line-height: normal;
+}
+
+.feature-menu__icon {
+  fill: rgb(var(--color-text));
+  height: 25px;
+  width: 25px;
+}
+
+.no-js .feature-menu__item--lang, .no-js .feature-menu__item--mode, .no-js .feature-menu__item--search {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .feature-menu {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+  .feature-menu__icon {
+    transition: all 0.3s ease;
+  }
+  .feature-menu__item:focus .feature-menu__icon, .feature-menu__item:hover .feature-menu__icon {
+    fill: rgb(var(--color-accent));
+  }
+  .feature-menu__item--lang {
+    position: relative;
+  }
+  .feature-menu__item--lang:before {
+    background-color: rgb(var(--color-text));
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 6px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: calc(100% - 12px);
+  }
+  .feature-menu__item--lang:focus:before, .feature-menu__item--lang:hover:before {
+    opacity: 1;
+  }
+}
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: 25px;
+  position: relative;
+  vertical-align: middle;
+  width: 25px;
+}
+
+.menu-toggle:after, .menu-toggle:before {
+  background-color: rgb(var(--color-text));
+  border-radius: 10px;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.menu-toggle:after {
+  box-shadow: 0 8px rgb(var(--color-text));
+  top: 10px;
+}
+
+.menu-toggle--close:after, .menu-toggle--close:before {
+  top: 11px;
+}
+
+.menu-toggle--close:before {
+  transform: rotate(45deg);
+}
+
+.menu-toggle--close:after {
+  box-shadow: none;
+  transform: rotate(-45deg);
+}
+
+.swiper {
+  display: block;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  overflow: clip;
+  padding: 0;
+}
+
+.swiper, .swiper-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  box-sizing: content-box;
+  display: flex;
+  height: 100%;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function);
+  width: 100%;
+}
+
+.swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper {
+  transform: translateZ(0);
+}
+
+.swiper-horizontal {
+  touch-action: pan-y;
+}
+
+.swiper-vertical {
+  touch-action: pan-x;
+}
+
+.swiper-slide {
+  display: block;
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  width: 100%;
+}
+
+.title {
+  font-family: Oswald, -apple-system, Arial, sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.title:first-letter {
+  color: rgb(var(--color-accent));
+}
+
+.title a {
+  color: rgb(var(--color-text));
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .title a:focus, .title a:hover {
+    text-decoration: underline;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .title a, .title span {
+    position: sticky;
+    top: 10px;
+  }
+}
+.main-section {
+  margin: 80px 0;
+}
+
+.main-section:first-child {
+  margin-top: 50px;
+}
+
+.main-section__title {
+  margin: 0 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-section {
+    margin: 60px 0;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .main-section {
+    margin: 100px 0;
+  }
+  .main-section:first-child {
+    margin-top: 80px;
+  }
+  .main-section__wrap {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: 300px minmax(320px, 1fr);
+  }
+  .main-section__title {
+    margin: -15px 0 0;
+  }
+}
+.card-article__item {
+  margin-bottom: 30px;
+}
+
+.card-article__item:last-child {
+  margin-bottom: 0;
+}
+
+.card-article__link {
+  color: rgb(var(--color-text));
+  text-decoration: none;
+}
+
+.card-article__img {
+  background-color: rgb(var(--color-text), 0.1);
+  height: 390px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-article__img:before {
+  background-image: radial-gradient(ellipse at center, rgba(181, 189, 200, 0) 0, hsla(208, 8%, 55%, 0) 50%, #28343b 100%);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 30px 30px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-article__img img {
+  display: block;
+  height: 100%;
+  line-height: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.card-article__meta {
+  -moz-column-gap: 5px;
+  column-gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.card-article__meta:before {
+  content: "-";
+  order: 1;
+}
+
+.card-article__date {
+  color: rgb(var(--color-accent));
+}
+
+.card-article__read {
+  color: rgba(var(--color-text), 0.5);
+  order: 2;
+}
+
+.card-article__title {
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.card-article__desc p {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card-article__link:focus .card-article__pic, .card-article__link:hover .card-article__pic {
+    transform: scale(1.1);
+  }
+  .card-article__link:focus .card-article__title, .card-article__link:hover .card-article__title {
+    text-decoration: underline;
+  }
+}
+.shape-decoration {
+  left: 50%;
+  max-width: 960px;
+  position: absolute;
+  top: 80px;
+  transform: translateX(-50%);
+  width: 80vw;
+  z-index: -1;
+}
+
+.dark-mode .shape-decoration path {
+  fill: rgba(var(--color-accent), 0.2);
+}
+
+.no-js .shape-decoration {
+  display: none;
+}
+
+@media screen and (min-width: 1180px) {
+  .shape-decoration {
+    width: 50vw;
+  }
+}
+.read-progress {
+  height: 5px;
+  left: 0;
+  line-height: 0;
+  position: fixed;
+  top: -1px;
+  width: 100%;
+  z-index: 10;
+}
+
+.read-progress__bar {
+  border-radius: 5px;
+  height: inherit;
+  width: inherit;
+}
+
+.read-progress__bar::-webkit-progress-bar {
+  background-color: rgba(var(--color-text), 0.3);
+}
+
+.read-progress__bar::-moz-progress-bar {
+  background-color: rgba(var(--color-accent));
+}
+
+.read-progress__bar::-webkit-progress-value {
+  background-color: rgba(var(--color-accent));
+}
+
+.back-top {
+  background-color: transparent;
+  background-color: rgba(var(--color-accent));
+  border: none;
+  border: 2px solid rgba(var(--color-text), 0.5);
+  bottom: 20px;
+  box-shadow: 0 1px 10px rgba(var(--color-overlay));
+  cursor: pointer;
+  font-family: inherit;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  vertical-align: middle;
+  width: 40px;
+  z-index: 10;
+}
+
+.back-top svg {
+  fill: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .back-top {
+    bottom: 40px;
+    right: 40px;
+    transition: background-color 0.3s ease;
+  }
+  .back-top:focus, .back-top:hover {
+    background-color: rgba(var(--color-accent), 0.9);
+  }
+}
+.main-header {
+  padding: 20px 0;
+}
+
+.main-header--article {
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.main-header__container {
+  align-items: center;
+  display: flex;
+}
+
+.main-header__nav {
+  margin-left: auto;
+}
+
+.main-header__feature {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .main-header__nav {
+    margin-left: 30px;
+    order: 1;
+  }
+  .main-header__feature {
+    display: flex;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .main-header__nav {
+    margin-left: auto;
+    order: 0;
+  }
+}
+.main-slider__list {
+  width: 100%;
+}
+
+@media (min-aspect-ratio: 9/26) {
+  .main-slider .swiper-wrapper {
+    height: calc(100vh - 300px);
+    min-height: 250px;
+  }
+}
+@media (min-aspect-ratio: 5/4) {
+  .main-slider .swiper-wrapper {
+    height: 450px;
+    min-height: auto;
+  }
+}
+.main-slider__slide {
+  background-color: rgba(var(--color-text), 0.1);
+  color: rgb(var(--color-text));
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-slider__img {
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+}
+
+.main-slider__img:before {
+  background-image: radial-gradient(ellipse at center, rgba(181, 189, 200, 0) 0, hsla(208, 8%, 55%, 0) 20%, #28343b 100%);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 30px 30px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.main-slider__info {
+  background-color: rgba(var(--color-accent), 0.8);
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  min-height: 126px;
+  opacity: 0;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease;
+}
+
+.main-slider__slide.swiper-slide-active .main-slider__info {
+  opacity: 1;
+}
+
+.main-slider__subtitle {
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.main-slider__desc {
+  font-size: 16px;
+  margin: 0;
+}
+
+.main-slider__img img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
+.main-slider__toggles {
+  align-items: center;
+  display: flex;
+  margin: 30px 0 0;
+}
+
+.main-slider .swiper-pagination {
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  display: flex;
+}
+
+.main-slider .swiper-pagination-bullet {
+  background-color: rgba(var(--color-text), 0.2);
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+}
+
+.main-slider .swiper-pagination-bullet-active {
+  background-color: rgb(var(--color-accent));
+}
+
+.main-slider .swiper-button-next, .main-slider .swiper-button-prev {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.main-slider .swiper-button-prev {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.main-slider .swiper-button-next svg, .main-slider .swiper-button-prev svg {
+  fill: rgb(var(--color-text));
+}
+
+.main-slider .swiper-button-disabled svg {
+  fill: rgba(var(--color-text), 0.2);
+}
+
+.no-js .main-slider__list {
+  overflow-x: auto;
+}
+
+.no-js .main-slider .swiper-wrapper {
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+.no-js .main-slider__slide {
+  width: 100%;
+}
+
+.no-js .main-slider__toggles {
+  display: none;
+}
+
+.no-js .main-slider__slide .main-slider__info, .no-js .main-slider__slide.swiper-slide-active:focus .main-slider__info, .no-js .main-slider__slide.swiper-slide-active:hover .main-slider__info, .no-js .main-slider__slide:focus .main-slider__info, .no-js .main-slider__slide:hover .main-slider__info {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .main-slider__slide.swiper-slide-active:focus .main-slider__info, .main-slider__slide.swiper-slide-active:hover .main-slider__info, .main-slider__slide:focus .main-slider__info, .main-slider__slide:hover .main-slider__info {
+    opacity: 1;
+  }
+  .main-slider .swiper-pagination-bullet {
+    cursor: pointer;
+  }
+  .main-slider .swiper-button-disabled {
+    cursor: not-allowed;
+  }
+  .main-slider .swiper-button-next svg, .main-slider .swiper-button-prev svg {
+    transition: all 0.3s ease;
+  }
+  .main-slider .swiper-button-next:not(.swiper-button-disabled):focus svg, .main-slider .swiper-button-next:not(.swiper-button-disabled):hover svg, .main-slider .swiper-button-prev:not(.swiper-button-disabled):focus svg, .main-slider .swiper-button-prev:not(.swiper-button-disabled):hover svg {
+    fill: rgb(var(--color-accent));
+  }
+  .no-js .main-slider__slide {
+    width: 33.3333333333%;
+  }
+  .no-js .main-slider__slide .main-slider__info {
+    opacity: 0;
+  }
+  .no-js .main-slider__slide:first-child .main-slider__info {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .main-slider__wrap {
+    width: calc(50% + 50vw - 10px);
+  }
+  .main-slider__title {
+    grid-column: 1/2;
+  }
+  .main-slider__list {
+    grid-column: 2/4;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .main-slider__info {
+    min-height: 100px;
+  }
+  .main-slider .swiper-button-prev {
+    margin-left: 74%;
+  }
+}
+.inner-category {
+  margin-bottom: 120px;
+}
+
+.inner-category__list {
+  --gap:60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  list-style: none;
+  margin: 0 0 80px;
+  padding: 0;
+}
+
+.inner-category__item {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .inner-category__list {
+    --gap:40px;
+    -moz-column-gap: var(--gap);
+    column-gap: var(--gap);
+    row-gap: calc(var(--gap) + 20px);
+  }
+  .inner-category__item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (min-width: 1180px) {
+  .inner-category__item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .inner-category__item {
+    width: calc(33.33333% - var(--gap) * 2 / 3);
+  }
+}
+@media screen and (min-width: 1700px) {
+  .inner-category__item {
+    width: calc(33.33333% - var(--gap) * 2 / 3);
+  }
+}
+.main-article {
+  padding-bottom: 100px;
+}
+
+.main-article__header {
+  background-color: rgb(var(--color-blue));
+  padding: 140px 0 70px;
+}
+
+.main-article__title {
+  word-wrap: break-word;
+  font-family: Oswald, -apple-system, Arial, sans-serif;
+  line-height: 1.2;
+  margin: 0 0 30px;
+}
+
+.main-article__title-accent {
+  color: rgb(var(--color-accent));
+}
+
+.main-article__desc {
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+
+.main-article__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 40px;
+}
+
+.main-article__info-title {
+  color: rgb(var(--color-accent));
+  font-weight: 500;
+  width: 100%;
+}
+
+.main-article__info-title:first-of-type {
+  margin-right: 10px;
+  width: auto;
+}
+
+.main-article__info-desc {
+  margin: 0 0 10px;
+  width: 100%;
+}
+
+.main-article__info-desc:first-of-type {
+  width: auto;
+}
+
+.main-article__info-desc a {
+  color: rgb(var(--color-accent));
+}
+
+.main-article__info-desc a:focus, .main-article__info-desc a:hover {
+  text-decoration: none;
+}
+
+.main-article__info-list {
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-article__info-item {
+  position: relative;
+}
+
+.main-article__info-item:last-child:before {
+  display: none;
+}
+
+.main-article__info-item:before {
+  content: ",";
+  position: absolute;
+  right: -4px;
+}
+
+.main-article__content {
+  padding: 60px 0 0;
+}
+
+.main-article__content > :first-child {
+  margin-top: 0;
+}
+
+.main-article__content > * + :not(h1, h2, h3, h4, h5, h6) {
+  margin-top: 25px;
+}
+
+.main-article__content h3 + p {
+  margin-top: 0;
+}
+
+.main-article__content a {
+  color: rgba(var(--color-accent));
+}
+
+.main-article__content a:focus, .main-article__content a:hover {
+  text-decoration: none;
+}
+
+.main-article__content ol li, .main-article__content ul li {
+  margin-bottom: 5px;
+}
+
+.main-article__content ol li:last-child, .main-article__content ul li:last-child {
+  margin-bottom: 0;
+}
+
+.main-article__content .attention {
+  color: rgba(var(--color-accent));
+}
+
+.main-article__content figure {
+  margin: 50px auto;
+}
+
+.main-article__content figure img {
+  margin: 0 auto;
+  min-height: auto;
+}
+
+.main-article__content figcaption {
+  color: rgba(var(--color-text), 0.5);
+  font-size: 14px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.main-article__content iframe, .main-article__content img, .main-article__content video {
+  box-shadow: 1px 0 20px rgb(var(--color-shadow));
+  display: block;
+  min-height: 400px;
+}
+
+.main-article__content iframe {
+  border: none;
+}
+
+.main-article__content img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.main-article__pagination {
+  border-bottom: 1px solid rgba(var(--color-text), 0.2);
+  border-top: 1px solid rgba(var(--color-text), 0.2);
+  padding: 40px 0;
+}
+
+.main-article__content + .main-article__pagination {
+  margin-top: 80px;
+}
+
+.main-article__pagination-next, .main-article__pagination-prev {
+  color: rgb(var(--color-accent));
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+.main-article__pagination-prev {
+  margin-bottom: 30px;
+}
+
+.main-article__pagination-label {
+  color: rgb(var(--color-text), 0.5);
+  display: block;
+  font-size: 16px;
+}
+
+.main-article__pagination-title {
+  display: block;
+  font-family: Oswald, -apple-system, Arial, sans-serif;
+  font-size: 24px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 520px) {
+  .main-article__info {
+    display: grid;
+    gap: 10px 20px;
+    grid-template-columns: auto 1fr;
+  }
+  .main-article__info-desc:first-of-type, .main-article__info-title:first-of-type {
+    margin: 0;
+    width: auto;
+  }
+  .main-article__info-title {
+    grid-column: 1/2;
+  }
+  .main-article__info-desc {
+    grid-column: 2/3;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-article__content {
+    padding: 80px 0 0;
+  }
+  .main-article__content figure {
+    margin: 30px auto;
+  }
+  .main-article__pagination {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .main-article__pagination-prev {
+    margin-bottom: 0;
+  }
+  .main-article__pagination-next:focus .main-article__pagination-title, .main-article__pagination-next:hover .main-article__pagination-title, .main-article__pagination-prev:focus .main-article__pagination-title, .main-article__pagination-prev:hover .main-article__pagination-title {
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .main-article__header-container {
+    -moz-column-gap: 100px;
+    column-gap: 100px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .main-article__desc, .main-article__title {
+    grid-column: 1/2;
+  }
+  .main-article__info, .main-article__share {
+    grid-column: 2/3;
+    margin-top: 10px;
+  }
+  .main-article__info, .main-article__title {
+    grid-row: 1/2;
+  }
+  .main-article__title {
+    grid-row: 1/3;
+  }
+  .main-article__desc {
+    margin: 0;
+  }
+  .main-article__content > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+  }
+  .main-article__content .code-block, .main-article__content iframe, .main-article__content img, .main-article__content video {
+    margin: 40px auto;
+    max-width: 80%;
+  }
+  .main-article__pagination {
+    -moz-column-gap: 50px;
+    column-gap: 50px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .main-article__header-container {
+    -moz-column-gap: 100px;
+    column-gap: 100px;
+    grid-template-columns: 2fr 1fr;
+  }
+}</style>
+
+<!-- Стили -->
+<link rel="preload" as="style" href="/assets/css/style.css?v=0.0.30" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=0.0.30"></noscript>
+
+<!-- Мета --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Frontend" />
+<meta property="og:locale" content="ru" />
+<meta name="description" content="Статьи по фронтенду" />
+<meta property="og:description" content="Статьи по фронтенду" />
+<link rel="canonical" href="http://localhost:4000/frontend/" />
+<meta property="og:url" content="http://localhost:4000/frontend/" />
+<meta property="og:site_name" content="Портфолио Sergio Eliofery" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Frontend" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Статьи по фронтенду","headline":"Frontend","url":"http://localhost:4000/frontend/"}</script>
+<!-- End Jekyll SEO tag -->
+<meta name="theme-color" content="#ee1b24">
+<meta name="application-name" content="Портфолио Sergio Eliofery">
+<meta name="apple-mobile-web-app-title" content="Портфолио Sergio Eliofery"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Портфолио Sergio Eliofery" /><!-- Favicons -->
+<link rel="icon" href="/assets/favicons/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json"><!-- Шрифты -->
+<link rel="preload" as="font" href="/assets/fonts/roboto/roboto-regular.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/assets/fonts/oswald/Oswaldmedium.woff2" type="font/woff2" crossorigin="anonymous">
+
+<!-- todo вынести стили-->
+<style>
+  .main-section__title {
+    position: relative;
+  }
+
+  .main-section__title a {
+    display: block;
+  }
+
+  .main-slider__more {
+    position: absolute;
+    top: 85%;
+    left: 0;
+
+    color: rgba(var(--color-text), 0.7);
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: underline;
+  }
+
+  .main-slider__slide.swiper-slide-active + .main-slider__slide.swiper-slide:last-child .main-slider__info {
+    opacity: 1;
+  }
+
+  .main-article__content figure {
+    margin: 40px auto;
+  }
+
+  pre {
+    overflow: auto;
+  }
+
+  .inner-category__desc {
+    margin-top: 60px;
+
+    color: rgba(var(--color-text), 0.7);
+  }
+
+  .main-slider__slide.swiper-slide-active + .main-slider__slide.swiper-slide:last-child .main-slider__info,
+  .main-slider__slide.swiper-slide-active .main-slider__info {
+    opacity: 0;
+  }
+
+  .main-slider__slide.swiper-slide-active + .main-slider__slide.swiper-slide:last-child:hover .main-slider__info,
+  .main-slider__slide.swiper-slide-active:hover .main-slider__info {
+    opacity: 1;
+  }
+
+  .main-slider__slide.swiper-slide-active + .main-slider__slide.swiper-slide:last-child:focus .main-slider__info,
+  .main-slider__slide.swiper-slide-active:focus .main-slider__info {
+    opacity: 1;
+  }
+
+  .main-about__content {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  @media screen and (min-width: 900px) {
+    .main-blog__block:nth-of-type(4) {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      margin-bottom: 0;
+    }
+
+    .main-blog__subtitle--blog {
+      margin-top: 0;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<div hidden>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-left" viewBox="0 0 31 16"><path d="M.293 7.293a1 1 0 000 1.414l6.364 6.364a1 1 0 001.414-1.414L2.414 8l5.657-5.657A1 1 0 006.657.93L.293 7.293zM31 7H1v2h30V7z"/></symbol><symbol id="icon-arrow-right" viewBox="0 0 31 16"><path d="M30.707 8.707a1 1 0 000-1.414L24.343.929a1 1 0 10-1.414 1.414L28.586 8l-5.657 5.657a1 1 0 001.414 1.414l6.364-6.364zM0 9h30V7H0v2z"/></symbol><symbol id="icon-arrow-top" viewBox="0 0 512 512"><path d="M390.624 150.625L256 16 121.376 150.625l22.628 22.627 95.997-95.998v417.982h32V77.257l95.995 95.995 22.628-22.627z"/></symbol><symbol id="icon-copy" viewBox="0 0 12 12"><g clip-path="url(#clip0_2_177)"><path d="M11.524 3.06a.272.272 0 00-.007-.036v.002a.275.275 0 00-.068-.128L9.088.537a.28.28 0 00-.126-.068H8.96a.248.248 0 00-.034-.007h-.002A.256.256 0 008.89.455H5.346a.281.281 0 00-.28.281V9c0 .156.125.282.28.282h5.904A.281.281 0 0011.53 9V3.097a.342.342 0 00-.007-.039v.002h.001zM9.17 1.415l1.4 1.4h-1.4v-1.4zM5.628 8.719V1.017h2.98v2.08c0 .155.125.281.28.281h2.08v5.34h-5.34zm1.025 1.5a.281.281 0 00-.281.281v.476h-5.34V3.274H3.75a.281.281 0 000-.562h-3a.281.281 0 00-.281.28v8.266c0 .155.126.28.281.28h5.903a.281.281 0 00.282-.28V10.5a.281.281 0 00-.282-.281z"/></g><defs><clipPath id="clip0_2_177"><path d="M0 0h12v12H0z"/></clipPath></defs></symbol><symbol id="icon-github" viewBox="0 0 25 26"><path d="M12.5 3c-5.522 0-10 4.478-10 10 0 4.686 3.227 8.607 7.577 9.692a1.459 1.459 0 01-.077-.486v-1.71H8.743c-.684 0-1.292-.293-1.587-.84-.328-.608-.384-1.537-1.196-2.105-.24-.19-.058-.405.22-.376.513.145.938.497 1.338 1.018.398.523.585.641 1.33.641.36 0 .9-.02 1.409-.1.273-.695.745-1.334 1.323-1.636-3.33-.342-4.92-1.999-4.92-4.248 0-.968.413-1.905 1.114-2.694-.23-.784-.519-2.381.088-2.99 1.499 0 2.405.972 2.622 1.235A7.493 7.493 0 0112.912 8a7.49 7.49 0 012.435.402c.216-.26 1.122-1.235 2.624-1.235.61.609.317 2.213.085 2.995.697.787 1.107 1.721 1.107 2.688 0 2.248-1.587 3.903-4.912 4.248.915.477 1.582 1.819 1.582 2.83v2.278c0 .087-.019.149-.029.223C19.701 21.063 22.5 17.363 22.5 13c0-5.522-4.477-10-10-10z"/></symbol><symbol id="icon-linkedin" viewBox="0 0 18 18"><path d="M14.76 1.44H3.24a1.8 1.8 0 00-1.8 1.8v11.52a1.8 1.8 0 001.8 1.8h11.52a1.8 1.8 0 001.8-1.8V3.24a1.8 1.8 0 00-1.8-1.8zM6.12 7.2v6.84H3.96V7.2h2.16zM3.96 5.21c0-.505.432-.89 1.08-.89.648 0 1.055.385 1.08.89 0 .503-.403.91-1.08.91-.648 0-1.08-.407-1.08-.91zm10.08 8.83h-2.16v-3.6c0-.72-.36-1.44-1.26-1.454h-.028c-.872 0-1.232.741-1.232 1.454v3.6H7.2V7.2h2.16v.922s.695-.922 2.092-.922c1.43 0 2.588.983 2.588 2.974v3.866z"/></symbol><symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10 0-.463-.694-.54-.933-.143a6.5 6.5 0 11-8.924-8.924C12.54 2.693 12.463 2 12 2 6.477 2 2 6.477 2 12s4.477 10 10 10z"/></symbol><symbol id="icon-search" viewBox="0 0 25 26"><path d="M10.5 2C5.81 2 2 5.81 2 10.5c0 4.69 3.81 8.5 8.5 8.5 1.855 0 3.57-.598 4.969-1.61l6.578 6.563 1.406-1.406-6.5-6.516A8.461 8.461 0 0019 10.5C19 5.81 15.19 2 10.5 2zm0 1c4.148 0 7.5 3.352 7.5 7.5S14.648 18 10.5 18A7.492 7.492 0 013 10.5C3 6.352 6.352 3 10.5 3z"/></symbol><symbol id="icon-sun" viewBox="0 0 30 30"><g clip-path="url(#clip0_6_522)"><path d="M14.984.986A1 1 0 0014 2v3a1 1 0 102 0V2A1.001 1.001 0 0014.984.986zM5.796 4.8a1 1 0 00-.695 1.717l2.121 2.12a1 1 0 101.414-1.413l-2.12-2.121a1 1 0 00-.72-.303zm18.376 0a1 1 0 00-.688.303l-2.121 2.12a1 1 0 101.414 1.415l2.121-2.121a1 1 0 00-.726-1.717zM15 8a7 7 0 100 14 7 7 0 000-14zM2 14a1 1 0 100 2h3a1 1 0 100-2H2zm23 0a1 1 0 100 2h3a1 1 0 100-2h-3zM7.91 21.06a1 1 0 00-.688.303l-2.12 2.121a1 1 0 101.413 1.414l2.121-2.12a1 1 0 00-.726-1.717zm14.15 0a1 1 0 00-.697 1.717l2.121 2.121a1 1 0 101.414-1.414l-2.121-2.12a1 1 0 00-.717-.303zm-7.076 2.926A1 1 0 0014 25v3a1 1 0 102 0v-3a1 1 0 00-1.016-1.014z"/></g><defs><clipPath id="clip0_6_522"><path d="M0 0h30v30H0z"/></clipPath></defs></symbol> <view id="icon-arrow-left-view" viewBox="0 0 31 16"/><view id="icon-arrow-right-view" viewBox="0 26 31 16"/><view id="icon-arrow-top-view" viewBox="0 52 512 512"/><view id="icon-copy-view" viewBox="0 574 12 12"/><view id="icon-github-view" viewBox="0 596 25 26"/><view id="icon-linkedin-view" viewBox="0 632 18 18"/><view id="icon-moon-view" viewBox="0 660 24 24"/><view id="icon-search-view" viewBox="0 694 25 26"/><view id="icon-sun-view" viewBox="0 730 30 30"/> <use xlink:href="#icon-arrow-left" x="0" y="0" width="31" height="16"/><use xlink:href="#icon-arrow-right" x="0" y="26" width="31" height="16"/><use xlink:href="#icon-arrow-top" x="0" y="52" width="512" height="512"/><use xlink:href="#icon-copy" x="0" y="574" width="12" height="12"/><use xlink:href="#icon-github" x="0" y="596" width="25" height="26"/><use xlink:href="#icon-linkedin" x="0" y="632" width="18" height="18"/><use xlink:href="#icon-moon" x="0" y="660" width="24" height="24"/><use xlink:href="#icon-search" x="0" y="694" width="25" height="26"/><use xlink:href="#icon-sun" x="0" y="730" width="30" height="30"/></svg>
+
+  
+</div>
+
+<!--[if IE]><p class="browser-upgrade">Вы используете <strong>устаревший</strong> браузер, сайт может отображаться некорректно.<br>Пожалуйста, <a rel="nofollow" href="https://browsehappy.com/" target="_blank">обновите</a>!</p><![endif]-->
+<noscript><p class="browser-upgrade"><b>Javascript</b> отключен, некоторые функции сайта недоступны.<br>Пожалуйста <a rel="nofollow" href="https://support.google.com/adsense/answer/12654" target="_blank">включите javascript</a>!<br></p></noscript>
+
+
+<div class="layout">
+  <div class="read-progress">
+  <progress class="read-progress__bar" max="100" value="0" data-el="read-progress" hidden></progress>
+</div>
+
+  
+  
+
+<header class="main-header ">
+  <div class="main-header__container container">
+    <div class="main-header__logo"><a class="logo" href="/">
+  <svg width="42" height="50" viewBox="0 0 42 50" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип">
+    <style>
+      .first {
+        fill: #ec1922;
+      }
+
+      .second {
+        fill: #222222;
+      }
+
+      .dark-mode .first {
+        fill: rgb(240, 51, 59);
+      }
+
+      .dark-mode .second {
+        fill: #f9f9f9;
+      }
+    </style>
+    <path class="second"
+          d="M34.1158 0.000353776C32.076 0.00432647 29.2338 0.0412383 28.8935 0.0777863C27.7357 0.202146 26.3624 0.535951 25.9132 0.802199C25.8091 0.86387 25.6665 0.914292 25.5963 0.914292C25.4018 0.914292 24.7237 1.25652 23.6953 1.87356C22.0817 2.84174 20.417 4.62295 19.6189 6.23503C19.1026 7.27789 18.9185 7.71058 18.8515 8.03953C18.812 8.23316 18.7309 8.47699 18.6711 8.58139C18.5536 8.7867 18.426 9.43717 18.2795 10.5774C18.1532 11.5603 18.2776 20.7242 18.2776 20.7242L18.1964 31.7699C18.1791 37.7294 18.2005 38.7863 18.3642 40.0181C18.4693 40.8095 18.7328 41.831 18.8917 42.0635C18.9364 42.1288 18.9729 42.2559 18.9729 42.3459C18.9729 42.436 18.9995 42.5259 19.032 42.5458C19.0645 42.5657 19.1314 42.717 19.1808 42.8818C19.2301 43.0466 19.399 43.4045 19.5561 43.6769C19.7132 43.9494 19.8864 44.2536 19.941 44.3529C20.4397 45.2603 21.3932 46.3597 22.4011 47.1898C23.2711 47.9063 23.3719 47.9817 23.6525 48.1259C23.7986 48.201 24.0136 48.3269 24.1305 48.4057C24.3544 48.5569 25.0072 48.8693 25.617 49.1172C25.8173 49.1986 26.0357 49.2893 26.1025 49.3189C26.4616 49.478 27.9109 49.8139 28.6509 49.9095C29.5406 50.0244 30.6701 50.0305 31.4117 49.9243C31.6286 49.8933 31.9699 49.8512 32.1702 49.8308C32.87 49.7597 34.5928 49.1889 35.477 48.7351C36.2826 48.3217 36.7654 48.0359 37.0599 47.7981C38.1305 46.9336 38.4112 46.6913 38.7536 46.3361C39.0924 45.9848 39.3153 45.714 40.0148 44.8045C40.2898 44.4468 41.0246 43.0463 41.1836 42.5769C41.2789 42.2955 41.4155 41.9026 41.4873 41.7039C41.6289 41.3117 41.7263 40.863 41.8925 39.8375C41.9905 39.2329 42.0034 38.596 41.9999 32.5224L41.9958 30.704L36.2649 30.6959L36.2637 32.6128C36.2637 38.9936 36.2586 39.1258 35.9738 40.1084C35.8154 40.6548 35.4387 41.4187 35.113 41.8537C34.7037 42.4004 33.9164 43.1045 33.3533 43.4272C32.3934 43.9774 32.0766 44.1024 31.2904 44.2416C29.691 44.5248 28.386 44.2953 26.9573 43.4797C26.6749 43.3184 26.3896 43.1419 26.3235 43.0875C26.0952 42.9 25.2525 42.049 25.0947 41.8466C24.873 41.5622 24.4188 40.6403 24.2532 40.1386C23.9569 39.2409 23.9521 39.1337 23.9505 32.1155L23.9481 20.7739C24.2046 20.7727 24.4413 20.772 24.7169 20.7705L28.0183 20.7522C28.4217 20.7605 35.3653 20.7613 35.7687 20.7624L35.8436 15.0712L27.2436 15.0626L24.1373 15.0627L24.0429 14.9289C23.9643 14.8176 23.9484 14.5712 23.9484 13.4632C23.9484 11.834 24.0469 10.2819 24.1656 10.0413C24.213 9.94517 24.2518 9.84301 24.2518 9.81431C24.2518 9.71035 24.7572 8.70301 24.9714 8.37986C25.3042 7.87797 26.1715 7.01045 26.651 6.69989C27.1602 6.37004 27.8123 6.06728 28.5598 5.81382C28.8667 5.70977 29.1744 5.69827 32.3825 5.67059L33.3316 5.66238V5.64051H35.8715L35.8872 2.82585L35.903 0.0111912L35.7659 0.00863675C35.3866 0.0014149 34.7957 -0.000972163 34.1158 0.000353776Z"></path>
+    <path class="first"
+          d="M10.4669 49.9095C9.72691 49.8139 8.27759 49.478 7.91847 49.3189C7.85173 49.2893 7.63331 49.1986 7.43306 49.1172C6.82322 48.8693 6.17041 48.5569 5.94646 48.4057C5.82966 48.3268 5.61459 48.2009 5.46852 48.1259C5.18791 47.9817 5.08715 47.9063 4.21717 47.1898C3.20922 46.3598 2.25573 45.2603 1.75699 44.353C1.70239 44.2536 1.52919 43.9494 1.37211 43.6769C1.21503 43.4044 1.04616 43.0466 0.996821 42.8818C0.947484 42.7169 0.880517 42.5657 0.848014 42.5458C0.815512 42.5259 0.788898 42.4359 0.788898 42.3459C0.788898 42.2559 0.752382 42.1288 0.707725 42.0635C0.548776 41.8309 0.285351 40.8095 0.180214 40.0181C0.0165861 38.7863 -0.00490414 37.7294 0.0124273 31.7699L0.0278499 30.7071L2.89745 30.7062L5.76419 30.7071L5.76657 32.1155C5.77857 39.1336 5.77292 39.2409 6.06917 40.1385C6.23475 40.6402 6.68902 41.5622 6.91076 41.8466C7.06854 42.049 7.91117 42.9 8.13943 43.0876C8.20558 43.1419 8.49085 43.3184 8.77335 43.4797C10.202 44.2954 11.5069 44.5248 13.1064 44.2417C13.8926 44.1025 14.2095 43.9773 15.1694 43.4271C15.7324 43.1044 16.5197 42.4004 16.929 41.8536C17.2546 41.4186 17.6314 40.6548 17.7898 40.1084C18.0746 39.1258 18.0797 38.9936 18.0797 32.6128C18.0797 29.3015 18.0551 26.3595 18.0249 26.0752C17.9497 25.3668 17.7679 24.7895 17.3632 23.9745C17.0634 23.3707 16.9474 23.2082 16.4445 22.6881C16.128 22.3606 16.033 22.1665 14.6192 21.4563C14.1051 21.198 13.1682 20.8631 12.4903 20.8405L9.83425 20.7522L6.53296 20.7704C2.07598 20.795 0.148461 20.7694 0.0936213 20.7242C-0.0324299 20.6204 -0.0306534 11.5603 0.0956721 10.5774C0.24214 9.43719 0.369769 8.7867 0.487266 8.58139C0.547009 8.47699 0.628171 8.23315 0.667651 8.03953C0.734713 7.71057 0.918728 7.27785 1.43502 6.23499C2.23312 4.62291 3.89791 2.84173 5.51146 1.87355C6.53982 1.25651 7.21799 0.914316 7.41251 0.914316C7.48271 0.914316 7.6253 0.863858 7.72933 0.802185C8.17856 0.535939 9.55182 0.202162 10.7097 0.0778034C11.1634 0.0290708 16.065 -0.0202762 17.582 0.00861352L17.7191 0.0112246L17.7033 2.82586L17.6876 5.64049L14.1986 5.67059C10.9906 5.69827 10.6828 5.7098 10.376 5.81385C9.62845 6.06731 8.97624 6.37003 8.46705 6.69987C7.9876 7.01043 7.12032 7.87797 6.78753 8.37986C6.57324 8.70301 6.06787 9.71037 6.06787 9.81433C6.06787 9.84303 6.02907 9.94518 5.98163 10.0413C5.86299 10.2819 5.76448 11.834 5.76448 13.4632C5.76448 14.5712 5.78043 14.8176 5.85894 14.9289L5.9534 15.0627L9.05966 15.0626C12.1459 15.0625 13.7166 15.1379 14.2289 15.3107C14.3291 15.3444 14.5339 15.3938 14.684 15.4204C15.1249 15.4986 15.5462 15.6161 15.8105 15.7347C15.9462 15.7956 16.098 15.8454 16.1478 15.8454C16.1977 15.8454 16.2915 15.8852 16.3562 15.9338C16.421 15.9824 16.5081 16.0231 16.5497 16.0241C16.7584 16.0294 18.4134 16.913 18.7494 17.1984C18.8328 17.2693 19.0103 17.3968 19.1438 17.4818C19.4646 17.6859 20.625 18.7544 21.0067 19.1971C21.1731 19.3901 21.3527 19.6361 21.4058 19.7437C21.4589 19.8514 21.5244 19.9394 21.5514 19.9394C21.6394 19.9394 22.2336 20.9152 22.6147 21.6854C23.0086 22.4813 23.159 22.8465 23.2348 23.1905C23.2604 23.3064 23.3255 23.5367 23.3795 23.7023C23.4834 24.0207 23.6045 24.593 23.7362 25.3881C23.7987 25.7654 23.8159 27.3102 23.8159 32.5225C23.8159 38.596 23.8067 39.2329 23.7086 39.8375C23.5424 40.8631 23.445 41.3117 23.3034 41.7039C23.2316 41.9026 23.095 42.2954 22.9997 42.5769C22.8407 43.0463 22.1058 44.4469 21.8308 44.8045C21.1314 45.7141 20.9085 45.9848 20.5697 46.3362C20.2273 46.6913 19.9466 46.9336 18.876 47.7981C18.5815 48.0359 18.0988 48.3217 17.2932 48.7351C16.4089 49.1889 14.6861 49.7597 13.9862 49.8308C13.786 49.8512 13.4447 49.8932 13.2278 49.9243C12.4862 50.0305 11.3566 50.0244 10.4669 49.9095Z"></path>
+  </svg>
+  <span class="logo__desc">Портфолио и блог Go<br> разработчика <b>Sergio Eliofery</b></span>
+</a>
+</div>
+    <div class="main-header__nav">
+<nav class="navigation">
+  <button class="navigation__toggle menu-toggle" type="button" data-el="nav-toggle-open" aria-label="Переключатель меню" aria-controls="navigation"></button>
+
+  <div id="navigation" class="navigation__wrap" data-el="nav-wrap">
+    <div class="navigation__header">
+      <div class="navigation__logo">
+        <a class="logo" href="/">
+  <svg width="42" height="50" viewBox="0 0 42 50" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип">
+    <style>
+      .first {
+        fill: #ec1922;
+      }
+
+      .second {
+        fill: #222222;
+      }
+
+      .dark-mode .first {
+        fill: rgb(240, 51, 59);
+      }
+
+      .dark-mode .second {
+        fill: #f9f9f9;
+      }
+    </style>
+    <path class="second"
+          d="M34.1158 0.000353776C32.076 0.00432647 29.2338 0.0412383 28.8935 0.0777863C27.7357 0.202146 26.3624 0.535951 25.9132 0.802199C25.8091 0.86387 25.6665 0.914292 25.5963 0.914292C25.4018 0.914292 24.7237 1.25652 23.6953 1.87356C22.0817 2.84174 20.417 4.62295 19.6189 6.23503C19.1026 7.27789 18.9185 7.71058 18.8515 8.03953C18.812 8.23316 18.7309 8.47699 18.6711 8.58139C18.5536 8.7867 18.426 9.43717 18.2795 10.5774C18.1532 11.5603 18.2776 20.7242 18.2776 20.7242L18.1964 31.7699C18.1791 37.7294 18.2005 38.7863 18.3642 40.0181C18.4693 40.8095 18.7328 41.831 18.8917 42.0635C18.9364 42.1288 18.9729 42.2559 18.9729 42.3459C18.9729 42.436 18.9995 42.5259 19.032 42.5458C19.0645 42.5657 19.1314 42.717 19.1808 42.8818C19.2301 43.0466 19.399 43.4045 19.5561 43.6769C19.7132 43.9494 19.8864 44.2536 19.941 44.3529C20.4397 45.2603 21.3932 46.3597 22.4011 47.1898C23.2711 47.9063 23.3719 47.9817 23.6525 48.1259C23.7986 48.201 24.0136 48.3269 24.1305 48.4057C24.3544 48.5569 25.0072 48.8693 25.617 49.1172C25.8173 49.1986 26.0357 49.2893 26.1025 49.3189C26.4616 49.478 27.9109 49.8139 28.6509 49.9095C29.5406 50.0244 30.6701 50.0305 31.4117 49.9243C31.6286 49.8933 31.9699 49.8512 32.1702 49.8308C32.87 49.7597 34.5928 49.1889 35.477 48.7351C36.2826 48.3217 36.7654 48.0359 37.0599 47.7981C38.1305 46.9336 38.4112 46.6913 38.7536 46.3361C39.0924 45.9848 39.3153 45.714 40.0148 44.8045C40.2898 44.4468 41.0246 43.0463 41.1836 42.5769C41.2789 42.2955 41.4155 41.9026 41.4873 41.7039C41.6289 41.3117 41.7263 40.863 41.8925 39.8375C41.9905 39.2329 42.0034 38.596 41.9999 32.5224L41.9958 30.704L36.2649 30.6959L36.2637 32.6128C36.2637 38.9936 36.2586 39.1258 35.9738 40.1084C35.8154 40.6548 35.4387 41.4187 35.113 41.8537C34.7037 42.4004 33.9164 43.1045 33.3533 43.4272C32.3934 43.9774 32.0766 44.1024 31.2904 44.2416C29.691 44.5248 28.386 44.2953 26.9573 43.4797C26.6749 43.3184 26.3896 43.1419 26.3235 43.0875C26.0952 42.9 25.2525 42.049 25.0947 41.8466C24.873 41.5622 24.4188 40.6403 24.2532 40.1386C23.9569 39.2409 23.9521 39.1337 23.9505 32.1155L23.9481 20.7739C24.2046 20.7727 24.4413 20.772 24.7169 20.7705L28.0183 20.7522C28.4217 20.7605 35.3653 20.7613 35.7687 20.7624L35.8436 15.0712L27.2436 15.0626L24.1373 15.0627L24.0429 14.9289C23.9643 14.8176 23.9484 14.5712 23.9484 13.4632C23.9484 11.834 24.0469 10.2819 24.1656 10.0413C24.213 9.94517 24.2518 9.84301 24.2518 9.81431C24.2518 9.71035 24.7572 8.70301 24.9714 8.37986C25.3042 7.87797 26.1715 7.01045 26.651 6.69989C27.1602 6.37004 27.8123 6.06728 28.5598 5.81382C28.8667 5.70977 29.1744 5.69827 32.3825 5.67059L33.3316 5.66238V5.64051H35.8715L35.8872 2.82585L35.903 0.0111912L35.7659 0.00863675C35.3866 0.0014149 34.7957 -0.000972163 34.1158 0.000353776Z"></path>
+    <path class="first"
+          d="M10.4669 49.9095C9.72691 49.8139 8.27759 49.478 7.91847 49.3189C7.85173 49.2893 7.63331 49.1986 7.43306 49.1172C6.82322 48.8693 6.17041 48.5569 5.94646 48.4057C5.82966 48.3268 5.61459 48.2009 5.46852 48.1259C5.18791 47.9817 5.08715 47.9063 4.21717 47.1898C3.20922 46.3598 2.25573 45.2603 1.75699 44.353C1.70239 44.2536 1.52919 43.9494 1.37211 43.6769C1.21503 43.4044 1.04616 43.0466 0.996821 42.8818C0.947484 42.7169 0.880517 42.5657 0.848014 42.5458C0.815512 42.5259 0.788898 42.4359 0.788898 42.3459C0.788898 42.2559 0.752382 42.1288 0.707725 42.0635C0.548776 41.8309 0.285351 40.8095 0.180214 40.0181C0.0165861 38.7863 -0.00490414 37.7294 0.0124273 31.7699L0.0278499 30.7071L2.89745 30.7062L5.76419 30.7071L5.76657 32.1155C5.77857 39.1336 5.77292 39.2409 6.06917 40.1385C6.23475 40.6402 6.68902 41.5622 6.91076 41.8466C7.06854 42.049 7.91117 42.9 8.13943 43.0876C8.20558 43.1419 8.49085 43.3184 8.77335 43.4797C10.202 44.2954 11.5069 44.5248 13.1064 44.2417C13.8926 44.1025 14.2095 43.9773 15.1694 43.4271C15.7324 43.1044 16.5197 42.4004 16.929 41.8536C17.2546 41.4186 17.6314 40.6548 17.7898 40.1084C18.0746 39.1258 18.0797 38.9936 18.0797 32.6128C18.0797 29.3015 18.0551 26.3595 18.0249 26.0752C17.9497 25.3668 17.7679 24.7895 17.3632 23.9745C17.0634 23.3707 16.9474 23.2082 16.4445 22.6881C16.128 22.3606 16.033 22.1665 14.6192 21.4563C14.1051 21.198 13.1682 20.8631 12.4903 20.8405L9.83425 20.7522L6.53296 20.7704C2.07598 20.795 0.148461 20.7694 0.0936213 20.7242C-0.0324299 20.6204 -0.0306534 11.5603 0.0956721 10.5774C0.24214 9.43719 0.369769 8.7867 0.487266 8.58139C0.547009 8.47699 0.628171 8.23315 0.667651 8.03953C0.734713 7.71057 0.918728 7.27785 1.43502 6.23499C2.23312 4.62291 3.89791 2.84173 5.51146 1.87355C6.53982 1.25651 7.21799 0.914316 7.41251 0.914316C7.48271 0.914316 7.6253 0.863858 7.72933 0.802185C8.17856 0.535939 9.55182 0.202162 10.7097 0.0778034C11.1634 0.0290708 16.065 -0.0202762 17.582 0.00861352L17.7191 0.0112246L17.7033 2.82586L17.6876 5.64049L14.1986 5.67059C10.9906 5.69827 10.6828 5.7098 10.376 5.81385C9.62845 6.06731 8.97624 6.37003 8.46705 6.69987C7.9876 7.01043 7.12032 7.87797 6.78753 8.37986C6.57324 8.70301 6.06787 9.71037 6.06787 9.81433C6.06787 9.84303 6.02907 9.94518 5.98163 10.0413C5.86299 10.2819 5.76448 11.834 5.76448 13.4632C5.76448 14.5712 5.78043 14.8176 5.85894 14.9289L5.9534 15.0627L9.05966 15.0626C12.1459 15.0625 13.7166 15.1379 14.2289 15.3107C14.3291 15.3444 14.5339 15.3938 14.684 15.4204C15.1249 15.4986 15.5462 15.6161 15.8105 15.7347C15.9462 15.7956 16.098 15.8454 16.1478 15.8454C16.1977 15.8454 16.2915 15.8852 16.3562 15.9338C16.421 15.9824 16.5081 16.0231 16.5497 16.0241C16.7584 16.0294 18.4134 16.913 18.7494 17.1984C18.8328 17.2693 19.0103 17.3968 19.1438 17.4818C19.4646 17.6859 20.625 18.7544 21.0067 19.1971C21.1731 19.3901 21.3527 19.6361 21.4058 19.7437C21.4589 19.8514 21.5244 19.9394 21.5514 19.9394C21.6394 19.9394 22.2336 20.9152 22.6147 21.6854C23.0086 22.4813 23.159 22.8465 23.2348 23.1905C23.2604 23.3064 23.3255 23.5367 23.3795 23.7023C23.4834 24.0207 23.6045 24.593 23.7362 25.3881C23.7987 25.7654 23.8159 27.3102 23.8159 32.5225C23.8159 38.596 23.8067 39.2329 23.7086 39.8375C23.5424 40.8631 23.445 41.3117 23.3034 41.7039C23.2316 41.9026 23.095 42.2954 22.9997 42.5769C22.8407 43.0463 22.1058 44.4469 21.8308 44.8045C21.1314 45.7141 20.9085 45.9848 20.5697 46.3362C20.2273 46.6913 19.9466 46.9336 18.876 47.7981C18.5815 48.0359 18.0988 48.3217 17.2932 48.7351C16.4089 49.1889 14.6861 49.7597 13.9862 49.8308C13.786 49.8512 13.4447 49.8932 13.2278 49.9243C12.4862 50.0305 11.3566 50.0244 10.4669 49.9095Z"></path>
+  </svg>
+  <span class="logo__desc">Портфолио и блог Go<br> разработчика <b>Sergio Eliofery</b></span>
+</a>
+
+      </div>
+      <div class="navigation__feature">
+        <div class="feature-menu">
+  <button class="feature-menu__item feature-menu__item--mode" type="button" data-el="dark-mode" aria-label="Переключатель темы сайта">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" data-el="dark-mode-icon">
+  <use xlink:href="#icon-sun"></use>
+</svg>
+
+  </button>
+
+  <a class="feature-menu__item feature-menu__item--github" href="https://github.com/eliofery" target="_blank" rel="nofollow" aria-label="Github профиль">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" >
+  <use xlink:href="#icon-github"></use>
+</svg>
+
+  </a>
+
+  <button class="feature-menu__item feature-menu__item--search" type="button" data-el="search-open" aria-label="Поиск по сайту">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" >
+  <use xlink:href="#icon-search"></use>
+</svg>
+
+  </button>
+
+  <button class="feature-menu__item feature-menu__item--lang" type="button" aria-label="Переключить язык сайта на английский" translate="no" data-google-lang="en" title="Английский">EN</button>
+</div>
+
+      </div>
+      <button class="menu-toggle menu-toggle--close" type="button" data-el="nav-toggle-close" aria-label="Переключатель меню"></button>
+    </div>
+
+    <div class="navigation__content" data-el="nav-content">
+      <ul class="navigation__list">
+        
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/portfolio">Портфолио</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog">Блог</a>
+    
+      <button class="navigation__sub-toggle" type="button" data-el="nav-toggle-sub" aria-label="Переключатель вложенного меню"></button>
+      <ul class="navigation__sub-list">
+        <li class="navigation__item navigation__item--back">
+          <button class="navigation__link" type="button" data-el="nav-toggle-back">← Назад</button>
+        </li>
+        
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/dsa">DSA</a>
+    
+  </li>
+
+  
+  <li class="navigation__item navigation__item--active">
+    <a class="navigation__link" href="/frontend">Frontend</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/backend">Backend</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/linux">Linux</a>
+    
+      <button class="navigation__sub-toggle" type="button" data-el="nav-toggle-sub" aria-label="Переключатель вложенного меню"></button>
+      <ul class="navigation__sub-list">
+        <li class="navigation__item navigation__item--back">
+          <button class="navigation__link" type="button" data-el="nav-toggle-back">← Назад</button>
+        </li>
+        
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-19-linux-dlya-nachinayushhih-chast-1-ustanovka-linux.html">Установка Pop!_OS</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-20-linux-dlya-nachinayushhih-chast-2-nastrojka-sistemy-linux.html">Настройка Pop!_OS</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-21-linux-dlya-nachinayushhih-chast-3-soft-dlya-povsednevnyh-zadach-linux.html">Установка программ</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-22-linux-dlya-nachinayushhih-chast-4-nastrojka-programm-linux.html">Настройка программ</a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/program">Программы</a>
+    
+      <button class="navigation__sub-toggle" type="button" data-el="nav-toggle-sub" aria-label="Переключатель вложенного меню"></button>
+      <ul class="navigation__sub-list">
+        <li class="navigation__item navigation__item--back">
+          <button class="navigation__link" type="button" data-el="nav-toggle-back">← Назад</button>
+        </li>
+        
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-23-nastrojka-git-program.html">Git</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-25-nastrojka-vscode-program.html">VSCode</a>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/blog/2023-08-24-nastrojka-phpstorm-program.html">PhpStorm</a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  <li class="navigation__item ">
+    <a class="navigation__link" href="/#about">Обо мне</a>
+    
+  </li>
+
+
+      </ul>
+      <button class="navigation__search" type="button" data-el="search-open">
+        Поиск по сайту
+        <svg class="navigation__search-icon" width="24"
+     height="24" aria-hidden="true" >
+  <use xlink:href="#icon-search"></use>
+</svg>
+
+      </button>
+    </div>
+  </div>
+
+  <div class="navigation__overlay overlay" data-el="nav-overlay" hidden></div>
+</nav>
+
+</div>
+    <div class="main-header__feature"><div class="feature-menu">
+  <button class="feature-menu__item feature-menu__item--mode" type="button" data-el="dark-mode" aria-label="Переключатель темы сайта">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" data-el="dark-mode-icon">
+  <use xlink:href="#icon-sun"></use>
+</svg>
+
+  </button>
+
+  <a class="feature-menu__item feature-menu__item--github" href="https://github.com/eliofery" target="_blank" rel="nofollow" aria-label="Github профиль">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" >
+  <use xlink:href="#icon-github"></use>
+</svg>
+
+  </a>
+
+  <button class="feature-menu__item feature-menu__item--search" type="button" data-el="search-open" aria-label="Поиск по сайту">
+    <svg class="feature-menu__icon" width="25"
+     height="25" aria-hidden="true" >
+  <use xlink:href="#icon-search"></use>
+</svg>
+
+  </button>
+
+  <button class="feature-menu__item feature-menu__item--lang" type="button" aria-label="Переключить язык сайта на английский" translate="no" data-google-lang="en" title="Английский">EN</button>
+</div>
+</div>
+  </div>
+</header>
+
+
+
+  <main class="layout__main">
+    
+  <section class="inner-category main-section">
+    <div class="inner-category__container container">
+    <div class="inner-category__wrap main-section__wrap">
+      <h2 class="inner-category__title main-section__title title"><span>Frontend</span></h2>
+      <div class="inner-category__content">
+        
+        <ul class="inner-category__list">
+          
+          <li class="inner-category__item">
+            <article class="inner-category__card card-article">
+              <a class="card-article__link" href="/blog/2023-09-18-sozdaem-svoj-framework-na-nativnom-javascript-ispolzuya-webpack-frontend.html">
+                <div class="card-article__img">
+                  
+
+
+
+
+  <picture>
+    <source srcset="/images/thumbnail/2023/09/sozdaem-svoj-framework-na-nativnom-javascript-ispolzuya-webpack/cover.webp" type="image/webp">
+    <img src="/images/thumbnail/2023/09/sozdaem-svoj-framework-na-nativnom-javascript-ispolzuya-webpack/cover.jpg" width='530' height='390' alt="Основное изображение" loading="lazy">
+  </picture>
+
+
+                </div>
+                <footer class="card-article__meta">
+                  <time class="card-article__date" datetime=" 2023-09-18T14:23
+                  ">18.09.2023</time>
+                  <span class="card-article__read">
+                    
+ 37
+ мин.
+
+                  </span>
+                </footer>
+                <h3 class="card-article__title">Создаем самописный framework на нативном JavaScript используя Webpack
+</h3>
+                <div class="card-article__desc">В этой статье речь пойдет о написании своего велосипеда в виде JavaScript framework. Затронем такие технологии как Webpack, Linter, Redux.
+
+                </div>
+              </a>
+            </article>
+          </li>
+          
+          <li class="inner-category__item">
+            <article class="inner-category__card card-article">
+              <a class="card-article__link" href="/blog/2023-09-01-startovyj-jekyll-shablon-dlya-sozdaniya-staticheskih-sajtov-frontend.html">
+                <div class="card-article__img">
+                  
+
+
+
+
+  <picture>
+    <source srcset="/images/thumbnail/2023/09/startovyj-jekyll-shablon-dlya-sozdaniya-staticheskih-sajtov/cover.webp" type="image/webp">
+    <img src="/images/thumbnail/2023/09/startovyj-jekyll-shablon-dlya-sozdaniya-staticheskih-sajtov/cover.jpg" width='530' height='390' alt="Стартовый Jekyll шаблон" loading="lazy">
+  </picture>
+
+
+                </div>
+                <footer class="card-article__meta">
+                  <time class="card-article__date" datetime=" 2023-09-01T09:16
+                  ">01.09.2023</time>
+                  <span class="card-article__read">
+                    
+ 29
+ мин.
+
+                  </span>
+                </footer>
+                <h3 class="card-article__title">Стартовый Jekyll шаблон для создания статических сайтов
+</h3>
+                <div class="card-article__desc">Создадим стартовый Jekyll шаблон на основе которого в дальнейшем можно будет разрабатывать статические сайты. В работе будут использованы такие технологии как html, scss, webp, npm.
+
+                </div>
+              </a>
+            </article>
+          </li>
+          
+          <li class="inner-category__item">
+            <article class="inner-category__card card-article">
+              <a class="card-article__link" href="/blog/2023-08-29-gulp-sborka-dlya-verstki-s-ispolzovaniem-pug-shablonizatora-frontend.html">
+                <div class="card-article__img">
+                  
+
+
+
+
+  <picture>
+    <source srcset="/images/thumbnail/2023/08/gulp-sborka-dlya-verstki-s-ispolzovaniem-pug-shablonizatora/cover.webp" type="image/webp">
+    <img src="/images/thumbnail/2023/08/gulp-sborka-dlya-verstki-s-ispolzovaniem-pug-shablonizatora/cover.jpg" width='530' height='390' alt="Gulp сборка с использованием Pug, Scss, Webpack, Linter, SVG, Favicons" loading="lazy">
+  </picture>
+
+
+                </div>
+                <footer class="card-article__meta">
+                  <time class="card-article__date" datetime=" 2023-08-29T11:26
+                  ">29.08.2023</time>
+                  <span class="card-article__read">
+                    
+ 43
+ мин.
+
+                  </span>
+                </footer>
+                <h3 class="card-article__title">Gulp сборка для верстки с использованием Pug шаблонизатора
+</h3>
+                <div class="card-article__desc">Создадим Seo оптимизированную, многофункциональную Gulp сборку для комфортной верстки многостраничных сайтов с использованием технологий Pug, Scss, Webpack, Linter (линтеров), SVG спрайтов. Оптимизируем изображения, а так же сгенерируем Favicons (фавиконки).
+
+                </div>
+              </a>
+            </article>
+          </li>
+          
+          <li class="inner-category__item">
+            <article class="inner-category__card card-article">
+              <a class="card-article__link" href="/blog/2023-08-28-prostoj-legkij-html-shablon-bez-ispolzovaniya-sborki-gulp-frontend.html">
+                <div class="card-article__img">
+                  
+
+
+
+
+  <picture>
+    <source srcset="/images/thumbnail/2023/08/prostoj-legkij-html-shablon-bez-ispolzovaniya-sborki-gulp/cover.webp" type="image/webp">
+    <img src="/images/thumbnail/2023/08/prostoj-legkij-html-shablon-bez-ispolzovaniya-sborki-gulp/cover.jpg" width='530' height='390' alt="Простой и легкий HTML шаблон" loading="lazy">
+  </picture>
+
+
+                </div>
+                <footer class="card-article__meta">
+                  <time class="card-article__date" datetime=" 2023-08-28T09:16
+                  ">28.08.2023</time>
+                  <span class="card-article__read">
+                    
+ 8
+ мин.
+
+                  </span>
+                </footer>
+                <h3 class="card-article__title">Простой, легкий HTML шаблон без использования gulp сборки
+</h3>
+                <div class="card-article__desc">Пример реализации простого, оптимизированного HTML шаблона без gulp и прочих сборок, с поддержкой базового SEO. Подойдет для верстки простеньких страниц.
+
+                </div>
+              </a>
+            </article>
+          </li>
+          
+        </ul>
+
+        
+        
+
+        
+        
+        <div class="inner-category__desc">
+          На данной странице представлены статьи касающиеся <b>Frontend</b> направления.
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <div class="shape-decoration" data-el="shape">
+  <svg viewBox="0 0 364 311" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M314 46.0001C253 0 137 -28 52.9999 46.0001C-31.0001 120 -1.0002 202 52.9999 248C107 294 247 340 314 248C381 156 375 92.0001 314 46.0001Z" fill="#ffe6e7">
+      <animate repeatCount="indefinite" attributeName="d" dur="8s" values="M314 46.0001C253 0 137 -28 52.9999 46.0001C-31.0001 120 -1.0002 202 52.9999 248C107 294 247 340 314 248C381 156 375 92.0001 314 46.0001Z;        M302.348 71.5969C209 -48 69.1956 6.19389 41.3478 71.5969C13.5 137 -35.5 223 41.3478 273.597C118.196 324.194 233.195 322.694 302.348 273.597C371.5 224.5 395.695 191.194 302.348 71.5969Z;        M314 46.0001C253 0 137 -28 52.9999 46.0001C-31.0001 120 -1.0002 202 52.9999 248C107 294 247 340 314 248C381 156 375 92.0001 314 46.0001Z;"></animate>
+    </path>
+  </svg>
+</div>
+
+
+  </main>
+
+  <footer class="main-footer main-section" id="contacts">
+  <div class="main-footer__container container">
+    <div class="main-footer__wrap main-section__wrap">
+      <div class="main-footer__copyright">©2024 Sergio Eliofery</div>
+      <div class="main-footer__content main-section__content">
+        <div class="main-footer__email">Контакты: <a href="erofsey&#64;yandex&#46;kz">erofsey&#64;yandex&#46;kz</a></div>
+        <ul class="main-footer__social social">
+          <li class="social__item">
+            <a class="social__link" href="https://github.com/eliofery" target="_blank" rel="nofollow" aria-label="Профиль Github">
+              <svg class="social__icon" width="20"
+     height="20" aria-hidden="true" >
+  <use xlink:href="#icon-github"></use>
+</svg>
+
+            </a>
+          </li>
+          <li class="social__item" style="display: none">
+            <a class="social__link" href="#" target="_blank" rel="nofollow" aria-label="Профиль Linkedin">
+              <svg class="social__icon" width="20"
+     height="20" aria-hidden="true" >
+  <use xlink:href="#icon-linkedin"></use>
+</svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <button class="back-top" type="button" aria-label="Вернуться на верх страницы" data-el="back-top" hidden>
+  <svg class="" width="20"
+     height="20" aria-hidden="true" >
+  <use xlink:href="#icon-arrow-top"></use>
+</svg>
+
+</button>
+
+</div>
+
+<div class="modal-search" data-el="search" hidden>
+  <div class="modal-search__content">
+    <p class="modal-search__field">
+      <svg class="modal-search__icon" width="24"
+     height="24" aria-hidden="true" >
+  <use xlink:href="#icon-search"></use>
+</svg>
+
+      <label for="search-modal" class="sr-only">Поиск по сайту</label>
+      <input id="search-modal" class="modal-search__input" type="text" data-el="search-input" placeholder="Поиск по сайту">
+    </p>
+
+    <div class="modal-search__result" data-el="search-result">
+      <div class="modal-search__item modal-search__item--not-found">
+        <div class="modal-search__item-wrap">Введите ваш запрос</div>
+      </div>
+    </div>
+
+    <button class="modal-search__toggle" type="button" data-el="search-close" aria-label="Закрыть поиск"></button>
+  </div>
+</div>
+
+
+
+  <script src="/assets/js/main.js?v=0.0.30" type="module"></script>
+
+<script src="/assets/js/Search.js?v=0.0.30"></script>
+<script>
+  const searchJson = `[
+    
+      {
+        "title"           : "Кодогенерация Protobuf файлов используя плагин Buf",
+        "tags"            : "golang, gRPC, googleapis, grpc-gateway, protovalidate, protobuf, buf",
+        "url"             : "/blog/2024-02-03-kodogeneraciya-protobuf-fajlov-ispolzuya-plagin-buf-backend.html",
+        "date"            : "03.02.2024",
+        "description"     : "В этой статье научимся генерировать <b>Protobuf</b> файлы через плагин <b>Buf</b>. Настроим зависимости сторонних <b>proto</b> нотаций, такие как <b>googleapis</b>, <b>grpc-gateway</b> и <b>protovalidate</b>."
+      },
+    
+      {
+        "title"           : "Создание сервера Golang с gRPC и Rest API используя Swagger",
+        "tags"            : "golang, gRPC, rest, swagger, protobuf, validate",
+        "url"             : "/blog/2024-02-01-sozdanie-servera-golang-s-grpc-i-rest-api-ispolzuya-swagger-backend.html",
+        "date"            : "01.02.2024",
+        "description"     : "В этой статье затронем такие темы как <b>gRPC</b>, <b>Rest API</b>, <b>Swagger</b>, <b>Protobuf</b>, <b>валидация данных</b> и создадим веб сервер используя эти технологии."
+      },
+    
+      {
+        "title"           : "Создание удобной обертки над Chi роутером с доступом к данным через context",
+        "tags"            : "golang, chi, context",
+        "url"             : "/blog/2024-01-31-sozdanie-udobnoj-obertki-nad-chi-routerom-s-dostupom-k-dannym-cherez-context-backend.html",
+        "date"            : "31.01.2024",
+        "description"     : "В этой статье создадим обертку над <b>Chi</b> роутером, которая позволит получать данные через контекст как во всех современных фреймворках на языке <b>Golang</b>."
+      },
+    
+      {
+        "title"           : "Автоматическая компиляция Golang проекта при изменении файлов",
+        "tags"            : "golang, modd",
+        "url"             : "/blog/2024-01-21-avtomaticheskaya-kompilyaciya-golang-proekta-pri-izmenenii-fajlov-backend.html",
+        "date"            : "21.01.2024",
+        "description"     : "В этой статье настроим слежение за изменением файлов. При котором будет автоматически перекомпилироваться <b>Golang</b> проект."
+      },
+    
+      {
+        "title"           : "Установка и использование нескольких версий Golang",
+        "tags"            : "golang, пакеты",
+        "url"             : "/blog/2024-01-20-ustanovka-i-ispolzovanie-neskolkih-versij-golang-backend.html",
+        "date"            : "20.01.2024",
+        "description"     : "В этой статье установим различные версии языка программирования <b>Golang</b> для дальнейшего их использования."
+      },
+    
+      {
+        "title"           : "Создаем самописный framework на нативном JavaScript используя Webpack",
+        "tags"            : "javascript, webpack, linter, redux",
+        "url"             : "/blog/2023-09-18-sozdaem-svoj-framework-na-nativnom-javascript-ispolzuya-webpack-frontend.html",
+        "date"            : "18.09.2023",
+        "description"     : "В этой статье речь пойдет о написании своего велосипеда в виде <b>JavaScript framework</b>. Затронем такие технологии как <b>Webpack</b>, <b>Linter</b>, <b>Redux</b>."
+      },
+    
+      {
+        "title"           : "Структура данных связанный список",
+        "tags"            : "список",
+        "url"             : "/blog/2023-09-16-struktura-dannyh-spisok-dsa.html",
+        "date"            : "16.09.2023",
+        "description"     : "Рассмотрим структуру данных список, научимся добавлять, удалять, находить, выводить элементы списка."
+      },
+    
+      {
+        "title"           : "Решение задачек через бинарный поиск",
+        "tags"            : "циклы, массивы, бинарный поиск",
+        "url"             : "/blog/2023-09-14-reshenie-zadachek-cherez-binarnyj-poisk-dsa.html",
+        "date"            : "14.09.2023",
+        "description"     : "Рассмотрим решение типовых задачек на бинарный поиск."
+      },
+    
+      {
+        "title"           : "Алгоритмы сортировки массива",
+        "tags"            : "циклы, массивы, сортировка",
+        "url"             : "/blog/2023-09-12-algoritmy-sortirovki-massiva-dsa.html",
+        "date"            : "12.09.2023",
+        "description"     : "Рассмотрим популярные решения для сортировки массива от медленных до быстрых."
+      },
+    
+      {
+        "title"           : "Базовая концепция двумерных массивов, решения типовых задач",
+        "tags"            : "циклы, массивы",
+        "url"             : "/blog/2023-09-10-bazovaya-koncepciya-dvumernyh-massivov-dsa.html",
+        "date"            : "10.09.2023",
+        "description"     : "Рассмотрим решения базовых задач на манипуляцию с массивом данных."
+      },
+    
+      {
+        "title"           : "Базовая концепция одномерных массивов, решения типовых задач",
+        "tags"            : "циклы, массивы",
+        "url"             : "/blog/2023-09-08-bazovaya-koncepciya-odnomernyh-massivov-dsa.html",
+        "date"            : "08.09.2023",
+        "description"     : "Рассмотрим решения базовых задач на манипуляцию с массивом данных."
+      },
+    
+      {
+        "title"           : "Базовая концепция рекурсии, решения типовых задач",
+        "tags"            : "циклы, рекурсия",
+        "url"             : "/blog/2023-09-06-bazovaya-koncepciya-rekursii-dsa.html",
+        "date"            : "06.09.2023",
+        "description"     : "Рассмотрим решения базовых, типовых задач на рекурсию."
+      },
+    
+      {
+        "title"           : "Математические манипуляции с числами",
+        "tags"            : "циклы, математика",
+        "url"             : "/blog/2023-09-04-matematicheskie-manipulyacii-s-chislami-dsa.html",
+        "date"            : "04.09.2023",
+        "description"     : "Рассмотрим базовые математические манипуляции с числами: подсчет цифр в числе, обратная перестановка, палиндром и многое другое."
+      },
+    
+      {
+        "title"           : "Паттерны и алгоритмы для работы с двумерными циклами",
+        "tags"            : "циклы, узоры",
+        "url"             : "/blog/2023-09-02-patterny-i-algoritmy-dlya-raboty-s-dvumernymi-ciklami-dsa.html",
+        "date"            : "02.09.2023",
+        "description"     : "Рассмотрим различные варианты манипуляции с двумерными циклами. Полученные знания в дальнейшем пригодятся для решения различных типов задач, например обход двухмерной матрицы и прочее."
+      },
+    
+      {
+        "title"           : "Стартовый Jekyll шаблон для создания статических сайтов",
+        "tags"            : "jekyll, html, scss, webp, npm",
+        "url"             : "/blog/2023-09-01-startovyj-jekyll-shablon-dlya-sozdaniya-staticheskih-sajtov-frontend.html",
+        "date"            : "01.09.2023",
+        "description"     : "Создадим стартовый <b>Jekyll</b> шаблон на основе которого в дальнейшем можно будет разрабатывать статические сайты. В работе будут использованы такие технологии как <b>html</b>, <b>scss</b>, <b>webp</b>, <b>npm</b>."
+      },
+    
+      {
+        "title"           : "Gulp сборка для верстки с использованием Pug шаблонизатора",
+        "tags"            : "gulp, pug, scss, webpack, svg, linter, seo",
+        "url"             : "/blog/2023-08-29-gulp-sborka-dlya-verstki-s-ispolzovaniem-pug-shablonizatora-frontend.html",
+        "date"            : "29.08.2023",
+        "description"     : "Создадим <b>Seo</b> оптимизированную, многофункциональную <b>Gulp</b> сборку для комфортной верстки многостраничных сайтов с использованием технологий <b>Pug</b>, <b>Scss</b>, <b>Webpack</b>, <b>Linter</b> (линтеров), <b>SVG</b> спрайтов. Оптимизируем изображения, а так же сгенерируем <b>Favicons</b> (фавиконки)."
+      },
+    
+      {
+        "title"           : "Простой, легкий HTML шаблон без использования gulp сборки",
+        "tags"            : "html, css, js, seo",
+        "url"             : "/blog/2023-08-28-prostoj-legkij-html-shablon-bez-ispolzovaniya-sborki-gulp-frontend.html",
+        "date"            : "28.08.2023",
+        "description"     : "Пример реализации простого, оптимизированного <b>HTML</b> шаблона без gulp и прочих сборок, с поддержкой базового <b>SEO</b>. Подойдет для верстки простеньких страниц."
+      },
+    
+      {
+        "title"           : "Установка и настройка Xdebug для отладки PHP кода",
+        "tags"            : "xdebug, phpstorm, vscode, php",
+        "url"             : "/blog/2023-08-27-ustanovka-i-nastrojka-xdebug-dlya-otladki-php-koda-program.html",
+        "date"            : "27.08.2023",
+        "description"     : "Рассмотрим установку и настройку Xdebug 2 и Xdebug 3, свяжем его с <b>PhpStorm</b> и <b>VSCode</b>."
+      },
+    
+      {
+        "title"           : "Стили кодирования (PHP линтеры)",
+        "tags"            : "linter, php snifer, php cs fixer, pre commit",
+        "url"             : "/blog/2023-08-26-stili-kodirovaniya-program.html",
+        "date"            : "26.08.2023",
+        "description"     : "Разберем что такое и для чего нужны <b>PHP линтеры</b>, рассмотрим два самых популярных линтера для <b>PHP</b>, установим и запустим, а так же настроим их для <b>VSCode</b>, <b>PhpStorm</b> и <b>Git</b>."
+      },
+    
+      {
+        "title"           : "Настройка Visual Studio Code",
+        "tags"            : "vscode, редактор кода, сниппеты, расширения, горячие клавиши",
+        "url"             : "/blog/2023-08-25-nastrojka-vscode-program.html",
+        "date"            : "25.08.2023",
+        "description"     : "Настроим <b>Visual Studio Code</b>, внесем базовые настройки, разберемся с горячими клавишами, установим расширения, добавим пользовательские сниппиты, добавим поддержку линтеров, настроим Xdebug, в общем приведем редактор кода в рабочий режим."
+      },
+    
+      {
+        "title"           : "Настройка PhpStorm",
+        "tags"            : "phpstorm, ide, сниппеты, плагины, горячие клавиши",
+        "url"             : "/blog/2023-08-24-nastrojka-phpstorm-program.html",
+        "date"            : "24.08.2023",
+        "description"     : "Настроим <b>PhpStorm</b>, внесем базовые настройки, разберемся с горячими клавишами, установим расширения, добавим пользовательские сниппиты, добавим поддержку линтеров, настроим Xdebug, в общем приведем IDE в рабочий режим."
+      },
+    
+      {
+        "title"           : "Настройка Git",
+        "tags"            : "git, ssh, github",
+        "url"             : "/blog/2023-08-23-nastrojka-git-program.html",
+        "date"            : "23.08.2023",
+        "description"     : "Настроим <b>Git</b> для дальнейшего создания коммитов и взаимодействия с удаленными репозиториями."
+      },
+    
+      {
+        "title"           : "Linux для начинающих с уклоном в веб разработку. Часть 4: Настройка программ в Pop!_OS",
+        "tags"            : "linux, popos, программы, софт, настройка",
+        "url"             : "/blog/2023-08-22-linux-dlya-nachinayushhih-chast-4-nastrojka-programm-linux.html",
+        "date"            : "22.08.2023",
+        "description"     : "В этой части речь пойдет о настройке программ в дистрибутиве <b>Pop!_OS</b>. Настроим <b>Git</b>, <b>VSCode</b> и <b>PhpStorm</b> для комфортной разработки."
+      },
+    
+      {
+        "title"           : "Linux для начинающих с уклоном в веб разработку. Часть 3: Установка программ в Pop!_OS",
+        "tags"            : "linux, popos, программы, софт, расширения",
+        "url"             : "/blog/2023-08-21-linux-dlya-nachinayushhih-chast-3-soft-dlya-povsednevnyh-zadach-linux.html",
+        "date"            : "21.08.2023",
+        "description"     : "В этой части речь пойдет об установке программ на дистрибутив <b>Pop!_OS</b>. Установим различный софт как для повседневных дел, так и для веб разработки."
+      },
+    
+      {
+        "title"           : "Linux для начинающих с уклоном в веб разработку. Часть 2: Настройка дистрибутива Pop!_OS",
+        "tags"            : "linux, popos, кастомизация темы, гибернация, настройка",
+        "url"             : "/blog/2023-08-20-linux-dlya-nachinayushhih-chast-2-nastrojka-sistemy-linux.html",
+        "date"            : "20.08.2023",
+        "description"     : "В этой части речь пойдет о настройке дистрибутива <b>Pop!_OS</b>. Сделаем полную настройку дистрибутива, добавим горячие клавиши как в <b>Windows</b>, кастомизируем внешний вид, добавим файл подкачки, настроим гибернацию и многое другое."
+      },
+    
+      {
+        "title"           : "Linux для начинающих с уклоном в веб разработку. Часть 1: Установка дистрибутива Pop!_OS",
+        "tags"            : "linux, popos, gparted, rufus",
+        "url"             : "/blog/2023-08-19-linux-dlya-nachinayushhih-chast-1-ustanovka-linux.html",
+        "date"            : "19.08.2023",
+        "description"     : "В этой части речь пойдет об установке дистрибутива <b>Pop!_OS</b>. Разберем почему именно этот дистрибутив, с какими сложностями можно столкнуться и как их решить и многое другое."
+      },
+    
+    
+      {
+        "title"           : "Верстка сайта документации по использованию Gulp сборки",
+        "tags"            : "figma, gulp, pug, scss, webpack, svg",
+        "url"             : "/portfolio/verstka-sajta-dokumentacii-po-ispolzovaniyu-gulp-sborki-30823.html",
+        "date"            : "30.08.2023",
+        "description"     : "Техническая документация по разворачиванию, использованию и дальнейшей поддержки <b>Gulp</b> сборки."
+      },
+    
+      {
+        "title"           : "Разработка сайта блог-портфолио под ключ с использованием Jekyll",
+        "tags"            : "figma, gulp, pug, scss, webpack, svg, jekyll",
+        "url"             : "/portfolio/razrabotka-sajta-blog-portfolio-pod-klyuch-31823.html",
+        "date"            : "31.08.2023",
+        "description"     : "Полный цикл создания блог-портфолио сайта от идеи до реализации с использованием <b>Jekyll</b>."
+      },
+    
+      {
+        "title"           : "Разработка интернет магазина недвижимости на нативном JavaScript",
+        "tags"            : "javascript, webpack, spa, linter, redux",
+        "url"             : "/portfolio/razrabotka-internet-magazina-nedvizhimosti-25124.html",
+        "date"            : "25.01.2024",
+        "description"     : "Реализация интернет магазина продажи квартир на нативном <b>JavaScript</b>."
+      },
+    
+      {
+        "title"           : "Разработка стартового шаблона для верстки статических сайтов на Jekyll",
+        "tags"            : "figma, jekyll, webp, scss",
+        "url"             : "/portfolio/razrabotka-startovogo-shablona-na-jekyll-26124.html",
+        "date"            : "26.01.2024",
+        "description"     : "Стартовый шаблон для верстки статических сайтов на <b>Jekyll</b>, с приведением примеров использования всех базовых конструкций."
+      },
+    
+      {
+        "title"           : "Разработка интернет магазина обуви и аксессуаров для ухода за обувью",
+        "tags"            : "figma, wordpress, woocommerce, 1C",
+        "url"             : "/portfolio/razrabotka-internet-magazina-obuvi-i-aksessuarov-dlya-uhoda-za-obuvyu-27124.html",
+        "date"            : "27.01.2024",
+        "description"     : "Разработка интернет магазина обуви на <b>CMS WordPress</b> с использованием плагина <b>Woocommerce</b> и интеграцией с <b>1C</b>."
+      },
+    
+      {
+        "title"           : "Верстка Landing page и интеграция модуля онлайн оплаты",
+        "tags"            : "gulp, scss, javascript, gsap",
+        "url"             : "/portfolio/verstka-landing-page-i-integraciya-modulya-onlajn-oplaty-28124.html",
+        "date"            : "28.01.2024",
+        "description"     : "Верстка и анимация <b>Landing page</b> и интеграция модуля онлайн оплаты через пластиковые карты."
+      },
+    
+      {
+        "title"           : "Seo оптимизация сайта международного медицинского центра",
+        "tags"            : "",
+        "url"             : "/portfolio/seo-optimizaciya-sajta-mezhdunarodnogo-medicinskogo-centra-29124.html",
+        "date"            : "29.01.2024",
+        "description"     : "В рамках этого проекта была выполнена <b>SEO</b> оптимизация, настройка и перенос сайта на новый сервер."
+      },
+    
+      {
+        "title"           : "Chix удобная обертка над Chi роутером с доступом к данным через контекст",
+        "tags"            : "golang, chi",
+        "url"             : "/portfolio/chix-udobnaya-obertka-nad-chi-routerom-s-dostupom-k-dannym-cherez-kontekst-30124.html",
+        "date"            : "30.01.2024",
+        "description"     : "В рамках этой работы была реализована обертка над <b>Chi</b> роутером, которая позволяет получать данный через контекст как во всех современных фреймворках на языке <b>Golang</b>."
+      }
+    
+  ]`
+
+  new Search(searchJson)
+</script>
+
+
+</body>
+</html>
